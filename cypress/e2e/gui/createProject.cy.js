@@ -1,8 +1,10 @@
 import { faker } from "@faker-js/faker";
+//a partir desse objeto, quando for passado o parâmetro, o teste poderá ser visual para camadas gui e api somadas
+const options = { env: { snapshotOnly: true } };
 
-describe("Create Project", () => {
+describe("Create Project", options, () => {
   beforeEach(() => {
-    cy.api_deleteProjects()
+    cy.api_deleteProjects();
     cy.login();
   });
 
